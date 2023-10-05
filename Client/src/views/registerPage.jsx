@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import { useAuth } from "../context/AuthContext"
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function RegisterPage () {
     const {register, handleSubmit, formState: {errors}} = useForm();
@@ -58,6 +58,9 @@ function RegisterPage () {
                 </button>
 
             </form>
+            <p>
+                Already have an account? <Link to="/login">Login</Link>
+            </p>
 
 
         </div>
