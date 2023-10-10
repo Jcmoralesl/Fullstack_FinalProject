@@ -10,24 +10,27 @@ import NoteFormPage from './views/noteFormPage'
 import ProfilePage from './views/profilePage'
 
 import ProtectedRoute from './ProtectedRoute'
+import { NoteProvider } from './context/NotesContext'
 
 function App () {
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage/>}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
-          <Route path="/register" element={<RegisterPage />}></Route>
+      <NoteProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage/>}></Route>
+            <Route path="/login" element={<LoginPage />}></Route>
+            <Route path="/register" element={<RegisterPage />}></Route>
 
-          <Route element={<ProtectedRoute/>}>
-            <Route path="/notes" element={<NotePage/>}></Route>
-            <Route path="/add-notes" element={<NoteFormPage/>}></Route>
-            <Route path="/notes/:id" element={<NoteFormPage/>}></Route>
-            <Route path="/profile" element={<ProfilePage/>}></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+            <Route element={<ProtectedRoute/>}>
+              <Route path="/notes" element={<NotePage/>}></Route>
+              <Route path="/add-notes" element={<NoteFormPage/>}></Route>
+              <Route path="/notes/:id" element={<NoteFormPage/>}></Route>
+              <Route path="/profile" element={<ProfilePage/>}></Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </NoteProvider>
     </AuthProvider>
   );
 }
