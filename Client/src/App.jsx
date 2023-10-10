@@ -11,12 +11,14 @@ import ProfilePage from './views/profilePage'
 
 import ProtectedRoute from './ProtectedRoute'
 import { NoteProvider } from './context/NotesContext'
+import NavBar from './components/navbar'
 
 function App () {
   return (
     <AuthProvider>
       <NoteProvider>
         <BrowserRouter>
+        <NavBar>
           <Routes>
             <Route path="/" element={<HomePage/>}></Route>
             <Route path="/login" element={<LoginPage />}></Route>
@@ -29,6 +31,7 @@ function App () {
               <Route path="/profile" element={<ProfilePage/>}></Route>
             </Route>
           </Routes>
+        </NavBar>
         </BrowserRouter>
       </NoteProvider>
     </AuthProvider>
