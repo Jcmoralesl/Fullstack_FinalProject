@@ -4,21 +4,28 @@ import {AuthProvider} from './context/AuthContext'
 
 import RegisterPage from './views/registerPage.jsx'
 import LoginPage from './views/loginPage.jsx'
+import NotePage from './views/notePage'
+import HomePage from './views/homePage'
+import NoteFormPage from './views/noteFormPage'
+import ProfilePage from './views/profilePage'
 
-
+import ProtectedRoute from './ProtectedRoute'
 
 function App () {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<h1>Home page</h1>}></Route>
+          <Route path="/" element={<HomePage/>}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
           <Route path="/register" element={<RegisterPage />}></Route>
-          <Route path="/notes" element={<h1>Note page</h1>}></Route>
-          <Route path="/add-notes" element={<h1>New Notes</h1>}></Route>
-          <Route path="/notes/:id" element={<h1>Update Notes</h1>}></Route>
-          <Route path="/profile" element={<h1>Profile</h1>}></Route>
+
+          <Route element={<ProtectedRoute/>}>
+            <Route path="/notes" element={<NotePage/>}></Route>
+            <Route path="/add-notes" element={<NoteFormPage/>}></Route>
+            <Route path="/notes/:id" element={<NoteFormPage/>}></Route>
+            <Route path="/profile" element={<ProfilePage/>}></Route>
+          </Route>
         </Routes>
       </BrowserRouter>
     </AuthProvider>

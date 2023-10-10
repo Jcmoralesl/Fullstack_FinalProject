@@ -9,7 +9,8 @@ import noteRoutes from './routes/notes.routes.js'
 const server = express ()
 
 server.use(cors({
-    origin: 'http://localhost:5173'
+    origin: 'http://localhost:5173',
+    credentials: true
 }));
 server.use(morgan('dev'))
 server.use(express.json());
