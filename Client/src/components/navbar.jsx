@@ -1,42 +1,43 @@
 import { Link } from "react-router-dom"
-import { useAuth } from "../context/AuthContext"
+import { useAuth } from "../context/AuthContext";
 
 function NavBar () {
 
-    const {isAuthenticated, logout, user} = useAuth()
+    const {isAuthenticated, logout, user} = useAuth();
 
     return (
-        <nav>
-            <Link to=''>
-                <h1>Memorium Alert</h1>
+        <nav className="bg-zinc-700 my-1 flex justify-between py-5 px-10 rounded-lg"> 
+            <Link to='/'>
+                <h1 className="text-2xl font-bold">Memorium Alert</h1>
             </Link>
-            <ul>
+            <ul className="flex gap-x-10">
                 {isAuthenticated ? (
                     <>
-                    <li>
-                    Welcome {user.username}
-                    </li>
-                    <li>
-                    <Link to='/add-notes'>Add Notes</Link>
-                    </li>
-                    <li>
-                        <Link to='/' onClick={() =>logout}>Logout</Link>
-                    </li>
+                        <li>
+                            Welcome {user.username}
+                        </li>
+                        <li>
+                            <Link to='/add-notes'>Add Notes</Link>
+                        </li>
+                        <li>
+                            <Link to='/' onClick={()=>{
+                            logout();}}>Logout</Link>
+                        </li>
                     </>
                 ) : (
                     <>
-                    <li>
-                    <Link to='/login'>Login</Link>
-                    </li>
-                    <li>
-                    <Link to='/register'>Register</Link>
-                    </li>
-                </>
+                        <li>
+                            <Link to='/login'>Login</Link>
+                        </li>
+                        <li>
+                            <Link to='/register'>Register</Link>
+                        </li>
+                    </>
                 )}
             </ul>
         </nav>
-    )
+    );
 }
 
-export default NavBar
+export default NavBar;
 
