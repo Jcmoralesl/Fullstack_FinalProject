@@ -8,9 +8,9 @@ function NavBar () {
     return (
         <nav className="bg-blue-500 my-1 flex justify-between py-5 px-10 rounded-lg"> 
             <Link to='/'>
-                <h1 className="text-2xl font-bold">Memorium Alert</h1>
+                <h1 className="text-2xl font-bold text-white">Memorium Alert</h1>
             </Link>
-            <ul className="flex gap-x-10">
+            <ul className="flex gap-x-9">
                 {isAuthenticated ? (
                     <>
                         <li>
@@ -27,10 +27,10 @@ function NavBar () {
                 ) : (
                     <>
                         <li>
-                            <Link to='/login'>Login</Link>
+                            <Link className="font-bold"to='/login'>Login</Link>
                         </li>
                         <li>
-                            <Link to='/register'>Register</Link>
+                            <Link className="font-bold" to='/register'>Register</Link>
                         </li>
                     </>
                 )}

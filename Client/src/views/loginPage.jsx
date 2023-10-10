@@ -35,7 +35,7 @@ function LoginPage () {
             <form onSubmit= {onSubmit}>
                 
                 <input type="email" {... register("email", {required: true})} placeholder="Email"
-                className="w-full bg-blue-700 text-white px-4 py-2 rounded-md my-3"/>
+                className="w-full bg-blue-500 text-white px-4 py-2 rounded-md my-3"/>
                 {
                     errors.email && (
                         <p>
@@ -45,7 +45,7 @@ function LoginPage () {
                 }
 
                 <input type="password" {... register("password", {required: true})} placeholder="Password"
-                className="w-full bg-blue-700 text-white px-4 py-2 rounded-md my-2"/>
+                className="w-full bg-blue-500 text-white px-4 py-2 rounded-md my-2"/>
                 {
                     errors.password && (
                         <p>
@@ -60,7 +60,7 @@ function LoginPage () {
 
             </form>
             <p className='text-white'>
-                Dont have an account? <Link class="bg-blue-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mx-2" to="/register">Sign up</Link>
+                Dont have an account? <Link class="bg-blue-500 hover:bg-gray-400 text-white py-2 px-4 rounded mx-2" to="/register">Sign up</Link>
             </p>
             </div>
         </div>

@@ -18,7 +18,7 @@ function App() {
     <AuthProvider>
       <NoteProvider>
         <BrowserRouter>
-          <NavBar>
+            <NavBar />
             <Routes>
               <Route path="/" element={<HomePage />}></Route>
               <Route path="/login" element={<LoginPage />}></Route>
@@ -31,7 +31,6 @@ function App() {
                 <Route path="/profile" element={<ProfilePage />}></Route>
               </Route>
             </Routes>
-          </NavBar>
         </BrowserRouter>
       </NoteProvider>
     </AuthProvider>
