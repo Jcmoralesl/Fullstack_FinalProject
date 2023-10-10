@@ -17,7 +17,7 @@ function RegisterPage () {
     })
 
     return (
-        <div className="bg-zinc-800 max-w-md p-10 rounded-md ">
+        <div className="bg-blue-800 max-w-md p-10 rounded-md ">
             {
                 registerErrors.map((error, i) => (
                     <div key={i}> 
@@ -27,7 +27,7 @@ function RegisterPage () {
             }
             <form onSubmit= {onSubmit}>
                 <input type="text" {...register("username", {required: true})} placeholder="Username"
-                className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"/>
+                className="w-full bg-blue-600 text-white px-4 py-2 rounded-md my-2"/>
                 {
                     errors.username && (
                         <p>
@@ -37,7 +37,7 @@ function RegisterPage () {
                 }
 
                 <input type="email" {... register("email", {required: true})} placeholder="Email"
-                className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"/>
+                className="w-full bg-blue-600 text-white px-4 py-2 rounded-md my-2"/>
                 {
                     errors.email && (
                         <p>
@@ -47,7 +47,7 @@ function RegisterPage () {
                 }
 
                 <input type="password" {... register("password", {required: true})} placeholder="Password"
-                className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"/>
+                className="w-full bg-blue-600 text-white px-4 py-2 rounded-md my-2"/>
                 {
                     errors.password && (
                         <p>
@@ -56,13 +56,13 @@ function RegisterPage () {
                     )
                 }
 
-                <button class="bg-white hover:bg-gray-100 text-gray-600 font-semibold py-2 px-4 border border-gray-400 rounded shadow my-4" type="submit">
+                <button class="bg-blue-300 hover:bg-gray-100 text-blue-700 font-semibold py-2 px-4 border border-gray-400 rounded shadow my-4" type="submit">
                     Register                    
                 </button>
 
             </form>
-            <p>
-                Already have an account? <Link class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mx-2" to="/login">Login</Link>
+            <p className="text-white">
+                Already have an account? <Link class="bg-blue-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mx-2" to="/login">Login</Link>
             </p>
 
 

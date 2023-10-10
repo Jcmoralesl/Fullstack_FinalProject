@@ -20,15 +20,15 @@ function App() {
         <BrowserRouter>
           <NavBar>
             <Routes>
-              <Route path="/" element={<HomePage/>}></Route>
-              <Route path="/login" element={<LoginPage/>}></Route>
-              <Route path="/register" element={<RegisterPage/>}></Route>
+              <Route path="/" element={<HomePage />}></Route>
+              <Route path="/login" element={<LoginPage />}></Route>
+              <Route path="/register" element={<RegisterPage />}></Route>
 
               <Route element={<ProtectedRoute />}>
-                <Route path="/notes" element={<NotePage/>}></Route>
-                <Route path="/add-notes" element={<NoteFormPage/>}></Route>
-                <Route path="/notes/:id" element={<NoteFormPage/>}></Route>
-                <Route path="/profile" element={<ProfilePage/>}></Route>
+                <Route path="/notes" element={<NotePage />}></Route>
+                <Route path="/add-notes" element={<NoteFormPage />}></Route>
+                <Route path="/notes/:id" element={<NoteFormPage />}></Route>
+                <Route path="/profile" element={<ProfilePage />}></Route>
               </Route>
             </Routes>
           </NavBar>

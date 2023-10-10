@@ -21,7 +21,7 @@ function LoginPage () {
 
     return (
         <div className='flex h-[calc(100vh-100px)] items-center justify-center'>
-            <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md'>
+            <div className='bg-blue-800 max-w-md w-full p-10 rounded-md'>
             {
                 siginErrors.map((error, i) => (
                     <div key={i}> 
@@ -30,12 +30,12 @@ function LoginPage () {
                 ))
             }
 
-            <h1 className='text-xl m-0 text-center'>Login</h1>
+            <h1 className='text-xl m-0 text-center text-white'>Login</h1>
 
             <form onSubmit= {onSubmit}>
                 
                 <input type="email" {... register("email", {required: true})} placeholder="Email"
-                className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-3"/>
+                className="w-full bg-blue-700 text-white px-4 py-2 rounded-md my-3"/>
                 {
                     errors.email && (
                         <p>
@@ -45,7 +45,7 @@ function LoginPage () {
                 }
 
                 <input type="password" {... register("password", {required: true})} placeholder="Password"
-                className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"/>
+                className="w-full bg-blue-700 text-white px-4 py-2 rounded-md my-2"/>
                 {
                     errors.password && (
                         <p>
@@ -54,13 +54,13 @@ function LoginPage () {
                     )
                 }
 
-                <button class="bg-white hover:bg-gray-100 text-gray-600 font-semibold py-2 px-4 border border-gray-400 rounded shadow my-4" type="submit">
+                <button class="bg-blue-300 hover:bg-gray-100 text-blue-600 font-semibold py-2 px-4 border border-gray-400 rounded shadow my-4" type="submit">
                     Login                    
                 </button>
 
             </form>
-            <p>
-                Dont have an account? <Link class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mx-2" to="/register">Sign up</Link>
+            <p className='text-white'>
+                Dont have an account? <Link class="bg-blue-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mx-2" to="/register">Sign up</Link>
             </p>
             </div>
         </div>
