@@ -1,16 +1,34 @@
 import {useForm} from 'react-hook-form'
 import { useNotes } from '../context/NotesContext';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
+import { useEffect } from 'react';
 
 function NoteFormPage () {
 
-    const {register, handleSubmit} = useForm ()
-    const {createNotes} = useNotes()
+    const {register, handleSubmit, setValue} = useForm ()
+    const {createNotes, getNote, updateNote} = useNotes()
     const navigate = useNavigate ();
+    const params = useParams();
+
+
+    useEffect(()=> {
+        async function loadNote () {
+            if (params.id) {
+                const note = await getNote(params.id)
+                setValue('title', note.title)
+                setValue('description', note.description)
+            }
+        }
+        loadNote()
+    }, [])
 
     const onSubmit = handleSubmit((data) =>{
-        createNotes(data);
-        navigate('/notes')
+        if (params.id) {
+            updateNote(params.id, data)
+        } else {
+            createNotes(data);
+        }
+        navigate('/notes');
     });
 
     return (

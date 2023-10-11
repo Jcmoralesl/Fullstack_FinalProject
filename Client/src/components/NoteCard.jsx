@@ -10,14 +10,14 @@ function NoteCard({ note }) {
         <header className="flex justify-between">
         <h1 className="text-2xl font-bold text-cyan-200">{note.title}</h1>
         <div className="flex gap-x-2 items-center">
-            <button onClick={() => {
+            <button className= "text-pink-300" onClick={() => {
                 deleteNotes (note._id)
             }}>delete</button>
-            <Link to={`/notes/${note._id}`}>edit</Link>
+            <Link className= "text-pink-300" to={`/notes/${note._id}`}>edit</Link>
         </div>
         </header>
         <p className="text-teal-100">{note.description}</p>
-        <p>{new Date(note.date).toLocaleDateString()}</p>
+        <p className="text-pink-500">{new Date(note.date).toLocaleDateString()}</p>
     </div>
     );
 }

@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import {createNotesRequest, getNotesRequest, deleteNotesRequest} from '../api/notes'
+import {createNotesRequest, getNotesRequest, deleteNotesRequest, getNoteRequest, updateNotesRequest} from '../api/notes'
 
 const NoteContext = createContext();
 
@@ -37,9 +37,24 @@ export function NoteProvider ({children}) {
             if (res.status === 204) setNotes(notes.filter(notes => notes._id != id))
         } catch (error) {
             console.log(error)
+        }   
+    }
+
+    const getNote = async (id) => {
+        try {
+            const res = await getNoteRequest(id);
+            return res.data
+        } catch(error) {
+            console.error(error)
         }
-        
-        
+    }
+
+    const updateNote = async (id, note) => {
+        try {
+            await updateNotesRequest(id,note)
+        }catch (error) {
+            console.error(error)
+        }
     }
 
     return (
@@ -47,7 +62,9 @@ export function NoteProvider ({children}) {
             notes,
             createNotes,
             getNotes,
-            deleteNotes
+            deleteNotes,
+            getNote,
+            updateNote
         }}>
             {children}
         </NoteContext.Provider>

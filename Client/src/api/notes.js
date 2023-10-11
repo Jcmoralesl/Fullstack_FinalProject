@@ -7,6 +7,6 @@ export const getNoteRequest = (id) => axios.get(`/notes/${id}`)
 
 export const createNotesRequest = (note) => axios.post('/notes', note)
 
-export const updateNotesRequest = (note) => axios.put(`/notes/${note._id}`, note)
+export const updateNotesRequest = (id, note) => axios.put(`/notes/${id}`, note)
 
 export const deleteNotesRequest = (id) => axios.delete(`/notes/${id}`)

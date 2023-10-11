@@ -54,7 +54,7 @@ function LoginPage () {
                     )
                 }
 
-                <button class="bg-blue-300 hover:bg-gray-100 text-blue-600 font-semibold py-2 px-4 border border-gray-400 rounded shadow my-4" type="submit">
+                <button className="bg-blue-300 hover:bg-gray-100 text-blue-600 font-semibold py-2 px-4 border border-gray-400 rounded shadow my-4" type="submit">
                     Login                    
                 </button>
 
