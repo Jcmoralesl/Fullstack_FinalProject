@@ -18,6 +18,7 @@ function App() {
     <AuthProvider>
       <NoteProvider>
         <BrowserRouter>
+          <main className="container mx-auto px-10">
             <NavBar />
             <Routes>
               <Route path="/" element={<HomePage />}></Route>
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/profile" element={<ProfilePage />}></Route>
               </Route>
             </Routes>
+          </main>
         </BrowserRouter>
       </NoteProvider>
     </AuthProvider>

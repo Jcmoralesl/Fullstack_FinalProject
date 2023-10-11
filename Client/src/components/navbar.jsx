@@ -13,13 +13,14 @@ function NavBar () {
             <ul className="flex gap-x-9">
                 {isAuthenticated ? (
                     <>
-                        <li>
+                        <li className="font-medium">
                             Welcome {user.username}
                         </li>
                         <li>
-                            <Link to='/add-notes'>Add Notes</Link>
+                            <Link to='/add-notes'
+                            className="bg-teal-500 px-4 py-1 rounded-sm text-black">Add Notes</Link>
                         </li>
-                        <li>
+                        <li className="font-medium">
                             <Link to='/' onClick={()=>{
                             logout();}}>Logout</Link>
                         </li>
@@ -27,10 +28,12 @@ function NavBar () {
                 ) : (
                     <>
                         <li>
-                            <Link className="font-bold"to='/login'>Login</Link>
+                            <Link to='/login'
+                            className="bg-teal-500 px-4 py-1 rounded-sm text-black">Login</Link>
                         </li>
                         <li>
-                            <Link className="font-bold" to='/register'>Register</Link>
+                            <Link to='/register'
+                            className="bg-teal-500 px-4 py-1 rounded-sm text-black">Register</Link>
                         </li>
                     </>
                 )}

@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useNotes } from "../context/NotesContext"
+import NoteCard from "../components/NoteCard"
 
 function NotePage () {
     const {getNotes, notes} = useNotes();
@@ -10,17 +11,13 @@ function NotePage () {
     
     if (notes.length === 0) return (<h1>No Notes</h1>)
 
-    return <div>
-        {
-            notes.map(note => (
-                <div key={note._id}>
-                    <h1>{note.title}</h1>
-                    <p>{note.description}</p>
-                </div>
-            ))
-        }
+    return (
+    <div className="grid grid-cols-3 gap-2">
+        {notes.map((note) => (
+                <NoteCard note={note} key={note._id} />
+            ))}
     </div>
-    
+    )
 }
 
 export default NotePage
