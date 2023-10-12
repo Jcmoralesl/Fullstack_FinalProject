@@ -38,7 +38,7 @@ function NoteFormPage () {
             createNotes(dataValid)
         }
 
-        //navigate('/notes');
+        navigate('/notes');
     });
 
     return (
