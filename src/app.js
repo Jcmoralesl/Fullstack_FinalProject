@@ -9,7 +9,7 @@ import noteRoutes from './routes/notes.routes.js'
 const server = express ()
 
 server.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://main--calm-smakager-f25b2f.netlify.app/',
     credentials: true
 }));
 server.use(morgan('dev'))
