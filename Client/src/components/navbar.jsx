@@ -7,7 +7,9 @@ function NavBar () {
 
     return (
         <nav className="bg-blue-500 my-1 flex justify-between py-5 px-10 rounded-lg"> 
-            <Link to='/'>
+            <Link to= {
+                isAuthenticated ? "/notes" : "/"
+            }>
                 <h1 className="text-2xl font-bold text-white">Memorium Alert</h1>
             </Link>
             <ul className="flex gap-x-9">

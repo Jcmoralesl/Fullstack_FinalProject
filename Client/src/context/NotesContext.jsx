@@ -28,7 +28,6 @@ export function NoteProvider ({children}) {
 
     const createNotes = async (note) => {
         const res = await createNotesRequest(note)
-        console.log(res)
     }
 
     const deleteNotes = async (id) => {

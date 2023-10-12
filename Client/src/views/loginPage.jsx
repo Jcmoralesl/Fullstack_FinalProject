@@ -30,7 +30,7 @@ function LoginPage () {
                 ))
             }
 
-            <h1 className='text-xl m-0 text-center text-white'>Login</h1>
+            <h1 className='text-3xl font-bold my-2 text-white'>Login</h1>
 
             <form onSubmit= {onSubmit}>
                 
