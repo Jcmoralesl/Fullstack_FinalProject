@@ -64,7 +64,7 @@ function RegisterPage () {
 
             </form>
             <p className="text-white">
-                Already have an account? <Link class="bg-blue-500 hover:bg-gray-400 text-white py-2 px-4 rounded mx-2" to="/login">Login</Link>
+                Already have an account? <Link className="bg-blue-500 hover:bg-gray-400 text-white py-2 px-4 rounded mx-2" to="/login">Login</Link>
             </p>
         </div>
         </div>
